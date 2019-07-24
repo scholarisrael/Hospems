@@ -1,5 +1,5 @@
 # Hospems
-# Global Code Project of Adrian Ackon, Israel Fiawotoafor and Jason Dickson
+# Global Code Project of Adrian Ackon, Israel Fiawotoafor and Dickson Abbey
 # Group Name Gloex
 # Project name Hospems
 # A hospital emergency Response System
