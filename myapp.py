@@ -1,12 +1,29 @@
 from flask import request, url_for,jsonify
 from flask_api import FlaskAPI, status, exceptions
+from datetime import datetime
 
 app = FlaskAPI(__name__)
-patients = [{'file' : '0'}]
+
+# Something to increase the value of id
+id = 0
+def increment():
+    idIncrement +=1
+    return idIncrement
+
+patients = [{
+    'id' : id,
+    'time' : datetime.now(),
+    'patientNo' : None,
+    'wardNo' : None,
+    'roomNo' : None,
+    'bedNo' : None,
+    'Status' : 'Pending'
+}]
+
 #Getting the list of all the patients
 @app.route('/helpneeded', methods = ['GET'])
 def returnPatients():
-    return jsonify({'Patient\'s names' : patients})
+    return jsonify({'Patient\'s details' : patients})
 
 #Adding a patient to the list
 @app.route('/helpneeded', methods = ['POST'])
