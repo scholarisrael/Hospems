@@ -1,0 +1,6 @@
+{
+    "bedNo": "4",
+	"patientNo": "1234",
+	"roomNo": "32",
+	"wardNo": "5"
+}
