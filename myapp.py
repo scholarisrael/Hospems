@@ -29,10 +29,10 @@ def returnPatients():
 #Adding a patient to the list
 @app.route('/helpneeded', methods = ['POST'])
 def addPatient():
-    print("Called AddPatient method")
+    # print("Called AddPatient method")
     increment()
     global id
-    print(f"The new id is: {id}" )
+    # print(f"The new id is: {id}" )
     patient = {
     'id' : id,
     'time' : datetime.now(),
