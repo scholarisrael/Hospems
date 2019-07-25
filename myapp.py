@@ -7,8 +7,9 @@ app = FlaskAPI(__name__)
 # Something to increase the value of id
 id = 0
 def increment():
-    idIncrement +=1
-    return idIncrement
+    global id
+    id +=1
+    return id
 
 patients = [{
     'id' : id,
@@ -28,7 +29,19 @@ def returnPatients():
 #Adding a patient to the list
 @app.route('/helpneeded', methods = ['POST'])
 def addPatient():
-    patient = {'file' : request.json['file']}
+    # print("Called AddPatient method")
+    increment()
+    global id
+    # print(f"The new id is: {id}" )
+    patient = {
+    'id' : id,
+    'time' : datetime.now(),
+    'patientNo' : request.json['patientNo'],
+    'wardNo' : request.json['wardNo'],
+    'roomNo' : request.json['roomNo'],
+    'bedNo' : request.json['bedNo'],
+    'Status' : 'Pending'
+    }
     patients.append(patient)
     #return the list of all the patients including the new ones
     return jsonify({'Patient\s names' : patients})
